@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom JS backtotop</title>
+    <style>
+        #back-to-top {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #A11F1F;
+          color: #FFF;
+          padding: 10px 15px;
+          text-align: center;
+          border-radius: 5px;
+          display: none;
+          cursor: pointer;
+        }
+      </style> 
+</head>
+<body>
+    <a href="#" id="back-to-top" style="display: none;">Back to Top</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+          } else {
+            backToTopButton.style.display = 'none';
+          }
+        });
+      
+        backToTopButton.addEventListener('click', function(event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+</script>  
+</body>
+
+</html>
